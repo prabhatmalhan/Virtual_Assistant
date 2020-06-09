@@ -253,6 +253,8 @@ def check():
 			viewNote()
 		elif ('make' or 'write') and 'note' in query:
 			makeNote()
+		else:
+			speak('Sorry command not recognized!!Please try again...')
 
 
 def intro():
