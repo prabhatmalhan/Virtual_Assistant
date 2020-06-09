@@ -11,31 +11,33 @@ import smtplib
 from email.mime.text import MIMEText
 
 
-os.system('pip install pyttsx3')
-os.system('pip install pipwin')
-os.system('pipwin install pyaudio')
-os.system('pipwin install speechrecognizer')
-os.system('pip install wikidedia')
-os.system('pip install tkinter')
-os.system('pip install smtplib')
-os.system('cls')
+def installer():
+	os.system('pip install pyttsx3')
+	os.system('pip install pipwin')
+	os.system('pipwin install pyaudio')
+	os.system('pipwin install speechRecognizer')
+	os.system('pip install wikidedia')
+	os.system('pip install tkinter')
+	os.system('pip install smtplib')
+	os.system('cls')
 
 
 def datain():
-    root = Tk()
-    var = IntVar()
-    l1 = Label(root,text="Your Name")
-    name = Entry(root,width =35 , fg='red',borderwidth = 5)
-    l1.grid(row=0,column=0)
-    name.grid(row = 0,column = 1)
-    l2= Label(root,text="Assistant Voice :")
-    l2.grid(row=1,column=0)
-    b1 = Radiobutton(root,text='Male',variable=var,value=0)
-    b1.grid(row=1,column=1)
-    b2 = Radiobutton(root,text='Female',variable=var,value=1)
-    b2.grid(row=3,column=1)
-    Button(root,text="Submit",fg='red',padx=40,borderwidth=5,command=lambda:getval(root,var,name)).grid(row=4,column=1)
-    root.mainloop()
+	installer()
+	root = Tk()
+	var = IntVar()
+	l1 = Label(root,text="Your Name")
+	name = Entry(root,width =35 , fg='red',borderwidth = 5)
+	l1.grid(row=0,column=0)
+	name.grid(row = 0,column = 1)
+	l2= Label(root,text="Assistant Voice :")
+	l2.grid(row=1,column=0)
+	b1 = Radiobutton(root,text='Male',variable=var,value=0)
+	b1.grid(row=1,column=1)
+	b2 = Radiobutton(root,text='Female',variable=var,value=1)
+	b2.grid(row=3,column=1)
+	Button(root,text="Submit",fg='red',padx=40,borderwidth=5,command=lambda:getval(root,var,name)).grid(row=4,column=1)
+	root.mainloop()
 
 
 def getval(root,var,name):
