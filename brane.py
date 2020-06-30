@@ -1,29 +1,39 @@
-import pyttsx3
-import speech_recognition as sr
-from datetime import *
-import requests
-import wikipedia
-import webbrowser
 import os
-from tkinter import *
-from tkinter import filedialog
-import smtplib
-from email.mime.text import MIMEText
-
 
 def installer():
 	os.system('pip install pyttsx3')
 	os.system('pip install pipwin')
 	os.system('pipwin install pyaudio')
-	os.system('pipwin install speechRecognizer')
-	os.system('pip install wikidedia')
-	os.system('pip install tkinter')
+	os.system('pipwin install SpeechRecognizer')
+	os.system('pip install Wikidedia')
 	os.system('pip install smtplib')
 	os.system('cls')
 
+try:
+	import pyttsx3
+	import speech_recognition as sr
+	from datetime import *
+	import requests
+	import wikipedia
+	import webbrowser
+	from tkinter import *
+	from tkinter import filedialog
+	import smtplib
+	from email.mime.text import MIMEText
+except Exception:
+	installer()
+	import pyttsx3
+	import speech_recognition as sr
+	from datetime import *
+	import requests
+	import wikipedia
+	import webbrowser
+	from tkinter import *
+	from tkinter import filedialog
+	import smtplib
+	from email.mime.text import MIMEText
 
 def datain():
-	installer()
 	root = Tk()
 	var = IntVar()
 	l1 = Label(root,text="Your Name")
@@ -45,7 +55,7 @@ def getval(root,var,name):
     b=name.get()
     if b!="":
         open('logs','w+').write(str(a)+"\n"+b)
-        root.quit()
+        root.destroy()
 
 try:
 	l = open("Logs",'r').readlines()
@@ -64,8 +74,9 @@ else:
 	username=l[1]
 	av=int(l[0])
 
-
+print(av)
 engine = pyttsx3.init('sapi5')
+print(engine.getProperty('voices'))
 engine.setProperty('voice',engine.getProperty('voices')[av].id)
 
 
