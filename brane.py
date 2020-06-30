@@ -74,9 +74,7 @@ else:
 	username=l[1]
 	av=int(l[0])
 
-print(av)
 engine = pyttsx3.init('sapi5')
-print(engine.getProperty('voices'))
 engine.setProperty('voice',engine.getProperty('voices')[av].id)
 
 
